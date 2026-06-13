@@ -495,6 +495,54 @@
       background: #efe8dc;
     }
 
+    .legal-info {
+      background: #e6eee8;
+    }
+
+    .legal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .legal-card {
+      padding: 26px;
+      border-radius: 22px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .legal-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .legal-card-wide {
+      grid-column: 1 / -1;
+    }
+
+    .delivery-list {
+      margin: 14px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .delivery-list li + li {
+      margin-top: 7px;
+    }
+
+    .legal-card a {
+      color: var(--forest-2);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .catalog-note {
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     .cta {
       background: linear-gradient(135deg, #1f3a31, #294b40);
       color: #fff;
@@ -521,7 +569,124 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 18px;
+      gap: 18px 28px;
+    }
+
+    .foot-brand {
+      font-weight: 700;
+    }
+
+    .foot-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .social-links,
+    .policy-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px 16px;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: opacity .2s;
+    }
+
+    .social-link:hover,
+    .policy-link:hover {
+      opacity: .78;
+    }
+
+    .social-icon {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+    }
+
+    .policy-link {
+      color: #ffffffa8;
+      font-size: 13px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .policy-link {
+      border: 0;
+      padding: 0;
+      background: transparent;
+      color: #ffffffa8;
+      font: inherit;
+      font-size: 13px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+    }
+
+    .policy-modal {
+      display: none;
+      position: fixed;
+      z-index: 101;
+      inset: 0;
+    }
+
+    .policy-modal.show {
+      display: block;
+    }
+
+    .policy-panel {
+      position: relative;
+      z-index: 1;
+      overflow: auto;
+      width: min(900px, calc(100% - 28px));
+      max-height: 88vh;
+      margin: 6vh auto;
+      padding: 30px;
+      border-radius: 24px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .policy-panel h3 {
+      margin: 0 42px 18px 0;
+      color: var(--forest);
+      font-family: Georgia, serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 500;
+      line-height: 1.1;
+    }
+
+    .policy-panel h4 {
+      margin: 22px 0 8px;
+      color: var(--forest);
+      font-size: 18px;
+    }
+
+    .policy-panel p,
+    .policy-panel li {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .policy-panel ul {
+      padding-left: 22px;
+    }
+
+    .policy-panel a {
+      color: var(--forest-2);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .policy-note {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: #e6eee8;
     }
 
     .modal {
@@ -662,8 +827,18 @@
       .grid2,
       .products,
       .place-grid,
-      .reviews-grid {
+      .reviews-grid,
+      .legal-grid {
         grid-template-columns: 1fr;
+      }
+
+      .foot-right {
+        align-items: flex-start;
+      }
+
+      .social-links,
+      .policy-links {
+        justify-content: flex-start;
       }
 
       .hero {
@@ -934,6 +1109,53 @@
       </div>
     </section>
 
+    <section class="legal-info" id="legal">
+      <div class="container">
+        <div class="intro reveal">
+          <h2>Контакты и информация о продукции</h2>
+          <p>Свяжитесь с нами, если у Вас появились вопросы по заказу, продукции или качеству товаров.</p>
+        </div>
+
+        <div class="legal-grid">
+          <div class="legal-card reveal">
+            <h3>Обращения и претензии</h3>
+            <p>
+              «Еда Сибири»<br>
+              Телефон: <a href="tel:+79507215911">+7 (950) 721-59-11</a><br>
+              Электронная почта: <a href="mailto:pawel71@mail.ru">pawel71@mail.ru</a>
+            </p>
+          </div>
+
+          <div class="legal-card reveal">
+            <h3>Изготовитель продукции</h3>
+            <p>
+              ИП Киргинцев Максим Александрович<br>
+              ИНН: 637722439405<br>
+              ОГРНИП: 322631200048181<br>
+              Регион регистрации: Самарская область
+            </p>
+          </div>
+
+          <div class="legal-card legal-card-wide reveal">
+            <h3>Условия заказа и доставки</h3>
+            <ul class="delivery-list">
+              <li>Заказы оформляются по предварительной заявке и 100% предоплате.</li>
+              <li>Предельный срок выполнения заказа — 1 календарный месяц.</li>
+              <li>Доставка осуществляется Почтой России или другими транспортными компаниями.</li>
+              <li>Условия доставки в удаленные регионы России определяются индивидуально.</li>
+              <li>Отправка в регионы выполняется в течение 7 дней после комплектации заказа.</li>
+              <li>Отправка производится два раза в неделю: во вторник и четверг.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="catalog-note reveal">
+          Сайт носит информационный характер и является каталогом продукции.
+          Актуальную стоимость и наличие товаров уточняйте при оформлении заказа.
+        </p>
+      </div>
+    </section>
+
     <section class="cta" id="contacts">
       <div class="container reveal">
         <h2>Подберите средства линии «Тайга» для ежедневного ухода</h2>
@@ -956,16 +1178,201 @@
 
   <footer>
     <div class="container foot">
-      <div>Еда Сибири · косметическая линия «Тайга»</div>
-      <div>
-        <a href="https://edasibiri.ru" target="_blank" rel="noopener noreferrer">Сайт бренда</a>
-        ·
-        <a href="https://t.me/edasibiri_biz" target="_blank" rel="noopener noreferrer">Telegram-канал</a>
-        ·
-        <a href="https://vk.com/edasibiri" target="_blank" rel="noopener noreferrer">Сообщество ВКонтакте</a>
+      <div class="foot-brand">🌲 Еда Сибири · косметическая линия «Тайга»</div>
+
+      <div class="foot-right">
+        <div class="social-links" aria-label="Официальные площадки бренда">
+          <a class="social-link" href="https://vk.com/edasibiri" target="_blank" rel="noopener noreferrer">
+            <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="1" y="3" width="22" height="18" rx="5" fill="currentColor"></rect>
+              <text x="12" y="16" text-anchor="middle" font-size="9" font-weight="700" fill="#142820" font-family="Arial, sans-serif">VK</text>
+            </svg>
+            <span>ВКонтакте</span>
+          </a>
+
+          <a class="social-link" href="https://t.me/edasibiri_biz" target="_blank" rel="noopener noreferrer">
+            <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M21.6 3.4a1.4 1.4 0 0 0-1.44-.18L3.2 9.83c-1.15.45-1.13 1.1-.2 1.38l4.35 1.36 1.67 5.17c.2.57.1.8.7.8.47 0 .68-.21.94-.47l2.09-2.03 4.34 3.2c.8.44 1.37.21 1.57-.74l2.87-13.53c.29-1.18-.45-1.72.07-1.57ZM9.1 12.26l8.49-5.36c.42-.25.8-.12.49.16l-7 6.32-.27 2.88-1.71-4Z"></path>
+            </svg>
+            <span>Telegram</span>
+          </a>
+
+          <a class="social-link" href="https://edasibiri.ru" target="_blank" rel="noopener noreferrer">
+            <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M10.5 13.5 13.5 10.5M8.2 15.8l-1.3 1.3a3.2 3.2 0 0 1-4.5-4.5l3.2-3.2a3.2 3.2 0 0 1 4.5 0M15.8 8.2l1.3-1.3a3.2 3.2 0 0 1 4.5 4.5l-3.2 3.2a3.2 3.2 0 0 1-4.5 0"></path>
+            </svg>
+            <span>Сайт</span>
+          </a>
+        </div>
+
+        <div class="policy-links" aria-label="Юридические документы">
+          <button class="policy-link" type="button" data-policy="privacy">Политика конфиденциальности</button>
+          <button class="policy-link" type="button" data-policy="terms">Условия использования сайта</button>
+        </div>
       </div>
     </div>
   </footer>
+
+  <div
+    class="policy-modal"
+    id="policyModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="policyTitle"
+    aria-hidden="true"
+  >
+    <div class="back" data-policy-close></div>
+
+    <div class="policy-panel" id="policyPanel">
+      <button
+        class="close"
+        id="policyClose"
+        type="button"
+        data-policy-close
+        aria-label="Закрыть документ"
+      >
+        ×
+      </button>
+
+      <div id="policyContent"></div>
+    </div>
+  </div>
+
+  <template id="privacyPolicyTemplate">
+    <h3 id="policyTitle">Политика конфиденциальности</h3>
+
+    <p class="policy-note">
+      Настоящая политика описывает порядок обработки персональных данных посетителей лендинга
+      косметической линии «Тайга».
+    </p>
+
+    <h4>1. Оператор персональных данных</h4>
+    <p>
+      Оператор персональных данных — Павел Елизарьев, физическое лицо.<br>
+      Телефон: <a href="tel:+79507215911">+7 (950) 721-59-11</a><br>
+      Электронная почта: <a href="mailto:pawel71@mail.ru">pawel71@mail.ru</a>
+    </p>
+
+    <h4>2. Какие данные могут обрабатываться</h4>
+    <p>
+      На лендинге не размещены формы регистрации, формы обратной связи или формы онлайн-оплаты.
+      Если посетитель самостоятельно связывается с оператором по телефону, электронной почте
+      или через Telegram, он может добровольно сообщить имя, контактные данные, сведения о заказе
+      и данные, необходимые для согласования доставки.
+    </p>
+    <p>
+      При открытии сайта могут технически обрабатываться данные, необходимые для загрузки страницы
+      и обеспечения ее работоспособности, в объеме, определяемом браузером и используемой инфраструктурой размещения сайта.
+    </p>
+
+    <h4>3. Цели обработки</h4>
+    <ul>
+      <li>ответы на обращения посетителей;</li>
+      <li>консультирование по продукции;</li>
+      <li>согласование состава, стоимости и наличия заказа;</li>
+      <li>согласование оплаты и доставки;</li>
+      <li>рассмотрение обращений по качеству продукции.</li>
+    </ul>
+
+    <h4>4. Способы обработки</h4>
+    <p>
+      Обработка может включать получение, систематизацию, хранение, уточнение, использование
+      и удаление данных в объеме, необходимом для достижения указанных целей.
+      Данные не используются для иных целей без соответствующего правового основания.
+    </p>
+
+    <h4>5. Аналитика и cookies</h4>
+    <p>
+      На момент публикации лендинга Яндекс Метрика и иные подключенные сервисы веб-аналитики
+      не используются. Лендинг не устанавливает собственные cookies для рекламы или аналитики.
+    </p>
+
+    <h4>6. Переходы на сторонние ресурсы</h4>
+    <p>
+      Лендинг содержит ссылки на Telegram, ВКонтакте и сайт бренда. При переходе на сторонний ресурс
+      обработка данных осуществляется по правилам соответствующего сервиса.
+    </p>
+
+    <h4>7. Обращения по персональным данным</h4>
+    <p>
+      Для уточнения, изменения или удаления добровольно предоставленных данных можно обратиться
+      по электронной почте <a href="mailto:pawel71@mail.ru">pawel71@mail.ru</a>
+      или по телефону <a href="tel:+79507215911">+7 (950) 721-59-11</a>.
+    </p>
+
+    <h4>8. Изменение политики</h4>
+    <p>
+      Политика может обновляться при изменении структуры лендинга, способов приема заказов
+      или подключении новых сервисов. Актуальная версия публикуется на этой странице.
+    </p>
+  </template>
+
+  <template id="termsPolicyTemplate">
+    <h3 id="policyTitle">Условия использования сайта</h3>
+
+    <p class="policy-note">
+      Используя лендинг косметической линии «Тайга», посетитель подтверждает,
+      что ознакомился с настоящими условиями.
+    </p>
+
+    <h4>1. Назначение сайта</h4>
+    <p>
+      Лендинг носит информационный характер и является каталогом продукции.
+      Размещенные материалы помогают ознакомиться с ассортиментом косметической линии «Тайга».
+      Актуальная стоимость, наличие товаров и окончательные условия заказа уточняются
+      при обращении в Telegram или по указанным контактам.
+    </p>
+
+    <h4>2. Оформление заказа</h4>
+    <ul>
+      <li>Заказы оформляются по предварительной заявке.</li>
+      <li>Заказ выполняется на условиях 100% предоплаты.</li>
+      <li>Предельный срок выполнения заказа — 1 календарный месяц.</li>
+    </ul>
+
+    <h4>3. Доставка</h4>
+    <ul>
+      <li>Доставка осуществляется Почтой России или другими транспортными компаниями.</li>
+      <li>Условия доставки в удаленные регионы России определяются индивидуально.</li>
+      <li>Отправка в регионы выполняется в течение 7 дней после комплектации заказа.</li>
+      <li>Отправка производится два раза в неделю: во вторник и четверг.</li>
+    </ul>
+
+    <h4>4. Информация о продукции</h4>
+    <p>
+      Описания товаров на лендинге предназначены для ознакомления.
+      Перед применением продукции необходимо ознакомиться с маркировкой на упаковке,
+      способом применения, составом и мерами предосторожности.
+    </p>
+
+    <h4>5. Обращения по качеству, возврату и обмену</h4>
+    <p>
+      Обращения по вопросам качества продукции, возврата и обмена рассматриваются
+      в соответствии с применимым законодательством Российской Федерации.
+      Для связи используйте электронную почту
+      <a href="mailto:pawel71@mail.ru">pawel71@mail.ru</a>
+      или телефон <a href="tel:+79507215911">+7 (950) 721-59-11</a>.
+    </p>
+
+    <h4>6. Сторонние ресурсы</h4>
+    <p>
+      Лендинг содержит ссылки на Telegram, ВКонтакте и сайт бренда.
+      Владелец лендинга не отвечает за содержание и правила работы сторонних ресурсов.
+    </p>
+
+    <h4>7. Использование материалов</h4>
+    <p>
+      Тексты, изображения и элементы оформления лендинга предназначены для информирования посетителей.
+      Использование материалов за пределами личного ознакомления допускается только с согласия правообладателя.
+    </p>
+
+    <h4>8. Контакты</h4>
+    <p>
+      По вопросам использования сайта можно обратиться по электронной почте
+      <a href="mailto:pawel71@mail.ru">pawel71@mail.ru</a>
+      или по телефону <a href="tel:+79507215911">+7 (950) 721-59-11</a>.
+    </p>
+  </template>
 
   <div
     class="review-lightbox"
@@ -1186,6 +1593,15 @@
     const modalClose = document.getElementById('modalClose');
     const closeButtons = document.querySelectorAll('[data-close]');
 
+    const policyModal = document.getElementById('policyModal');
+    const policyPanel = document.getElementById('policyPanel');
+    const policyClose = document.getElementById('policyClose');
+    const policyContent = document.getElementById('policyContent');
+    const policyButtons = document.querySelectorAll('[data-policy]');
+    const policyCloseButtons = document.querySelectorAll('[data-policy-close]');
+    const privacyPolicyTemplate = document.getElementById('privacyPolicyTemplate');
+    const termsPolicyTemplate = document.getElementById('termsPolicyTemplate');
+
     const reviewLightbox = document.getElementById('reviewLightbox');
     const reviewLightboxClose = document.getElementById('reviewLightboxClose');
     const reviewLightboxImage = document.getElementById('reviewLightboxImage');
@@ -1205,6 +1621,7 @@
     let activeFilter = 'all';
     let lastFocusedElement = null;
     let lastReviewFocusedElement = null;
+    let lastPolicyFocusedElement = null;
 
     const observer = new IntersectionObserver(
       entries => {
@@ -1364,6 +1781,39 @@
       }
     }
 
+    function openPolicy(policyName) {
+      const template = policyName === 'privacy'
+        ? privacyPolicyTemplate
+        : termsPolicyTemplate;
+
+      if (!template) {
+        return;
+      }
+
+      lastPolicyFocusedElement = document.activeElement;
+      policyContent.replaceChildren(template.content.cloneNode(true));
+      policyModal.classList.add('show');
+      policyModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+      policyPanel.scrollTop = 0;
+      policyClose.focus();
+    }
+
+    function closePolicy() {
+      if (!policyModal.classList.contains('show')) {
+        return;
+      }
+
+      policyModal.classList.remove('show');
+      policyModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      policyContent.replaceChildren();
+
+      if (lastPolicyFocusedElement) {
+        lastPolicyFocusedElement.focus();
+      }
+    }
+
     function openReviewLightbox(source, alt) {
       reviewLightboxImage.src = source;
       reviewLightboxImage.alt = alt;
@@ -1435,6 +1885,16 @@
       button.addEventListener('click', closeModal);
     });
 
+    policyButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        openPolicy(button.dataset.policy);
+      });
+    });
+
+    policyCloseButtons.forEach(button => {
+      button.addEventListener('click', closePolicy);
+    });
+
     reviewOpenButtons.forEach(button => {
       button.addEventListener('click', () => {
         openReviewLightbox(button.dataset.reviewSrc, button.dataset.reviewAlt);
@@ -1447,7 +1907,9 @@
 
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape') {
-        if (reviewLightbox.classList.contains('show')) {
+        if (policyModal.classList.contains('show')) {
+          closePolicy();
+        } else if (reviewLightbox.classList.contains('show')) {
           closeReviewLightbox();
         } else {
           closeModal();
