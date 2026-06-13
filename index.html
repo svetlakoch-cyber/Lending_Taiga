@@ -537,10 +537,121 @@
       text-underline-offset: 3px;
     }
 
+    .legal-card .btn.dark {
+      color: #fff;
+      text-decoration: none;
+    }
+
     .catalog-note {
       margin: 20px 0 0;
       color: var(--muted);
       font-size: 14px;
+    }
+
+    .order-process {
+      background: #f1ece2;
+    }
+
+    .order-note {
+      margin: 0 0 34px;
+      padding: 16px 18px;
+      border: 1px solid #1f3a3120;
+      border-radius: 16px;
+      background: #fffdf8;
+      color: var(--forest);
+      font-weight: 700;
+    }
+
+    .order-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .order-step {
+      padding: 20px;
+      border-radius: 20px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .order-step p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .order-number {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 14px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--forest);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .order-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px 20px;
+      margin-top: 22px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: #e6eee8;
+    }
+
+    .order-bottom p {
+      max-width: 760px;
+      margin: 0;
+      color: var(--forest);
+      font-weight: 700;
+    }
+
+    .review-context {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .faq {
+      background: #f8f4ec;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq-item {
+      overflow: hidden;
+      border-radius: 16px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .faq-item summary {
+      padding: 18px 20px;
+      color: var(--forest);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .faq-item p {
+      margin: 0;
+      padding: 0 20px 18px;
+      color: var(--muted);
+    }
+
+    .foot-note {
+      margin-top: 6px;
+      color: #ffffff94;
+      font-size: 13px;
+      font-weight: 400;
     }
 
     .cta {
@@ -795,6 +906,10 @@
       .products {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .order-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 700px) {
@@ -828,7 +943,8 @@
       .products,
       .place-grid,
       .reviews-grid,
-      .legal-grid {
+      .legal-grid,
+      .order-grid {
         grid-template-columns: 1fr;
       }
 
@@ -872,7 +988,7 @@
           <a href="#catalog">Каталог</a>
           <a href="#brand">О бренде</a>
           <a href="#reviews">Отзывы</a>
-          <a href="#contacts">Контакты</a>
+          <a href="#order">Заказ и доставка</a>
         </div>
 
         <button
@@ -896,8 +1012,9 @@
           <div class="eyebrow">Косметическая линия</div>
           <h1>Тайга</h1>
           <p>
-            Сила сибирской природы в ежедневном уходе за кожей и волосами.
-            Натуральные средства для бережного очищения, питания и восстановления.
+            Средства для ежедневного ухода за кожей, волосами и полостью рта.
+            Формулы созданы на основе природных компонентов и фирменных комплексов
+            «Горная тайга» и «Эфирка».
           </p>
 
           <div class="btns">
@@ -908,7 +1025,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              Заказать в Telegram
+              Уточнить наличие и оформить заказ
             </a>
           </div>
         </div>
@@ -933,23 +1050,23 @@
 
         <div class="grid4">
           <div class="feature reveal">
-            <h3>🌿 Природные компоненты</h3>
-            <p>Экстракты хвойных растений, растительные масла и ухаживающие комплексы.</p>
+            <h3>🌿 Средства для ежедневного ухода</h3>
+            <p>Очищение, увлажнение, питание и поддержка ощущения комфорта кожи и волос.</p>
           </div>
 
           <div class="feature reveal">
-            <h3>💧 Бережный уход</h3>
-            <p>Средства для очищения, увлажнения и ощущения комфорта.</p>
+            <h3>💧 Уход за лицом, телом и волосами</h3>
+            <p>В линейке можно подобрать средства для разных этапов ежедневного ухода.</p>
           </div>
 
           <div class="feature reveal">
             <h3>🌲 Фирменные комплексы</h3>
-            <p>«Горная тайга» и «Эфирка» объединяют природные компоненты и современные формулы.</p>
+            <p>«Горная тайга» с хвойными экстрактами и «Эфирка» с эфирными маслами дополняют формулы средств.</p>
           </div>
 
           <div class="feature reveal">
-            <h3>✨ Комплексный подход</h3>
-            <p>Уход за лицом, телом, волосами и полостью рта.</p>
+            <h3>✨ Индивидуальный подбор</h3>
+            <p>Можно получить консультацию и собрать подходящий набор средств.</p>
           </div>
         </div>
       </div>
@@ -970,7 +1087,8 @@
             <h3>«Горная тайга»</h3>
             <p>
               Природный комплекс на основе хвойных экстрактов.
-              Помогает поддерживать ощущение свежести, комфорта и ухоженности кожи и волос.
+              Входит в состав большинства средств линии и дополняет ежедневный уход
+              за кожей, волосами и полостью рта.
             </p>
           </div>
 
@@ -1007,15 +1125,72 @@
       </div>
     </section>
 
+    <section class="order-process" id="order">
+      <div class="container">
+        <p class="order-note reveal">
+          Заказы оформляются по предварительной заявке. Перед оплатой мы подтвердим
+          наличие товаров, итоговую стоимость, срок выполнения заказа и условия доставки.
+        </p>
+
+        <div class="intro reveal">
+          <h2>Как оформить заказ</h2>
+          <p>Путь от выбора средств до получения трек-номера состоит из пяти понятных шагов.</p>
+        </div>
+
+        <div class="order-grid">
+          <div class="order-step reveal">
+            <span class="order-number">1</span>
+            <h3>Выберите средства</h3>
+            <p>Отметьте товары линии «Тайга», которые Вас заинтересовали.</p>
+          </div>
+
+          <div class="order-step reveal">
+            <span class="order-number">2</span>
+            <h3>Напишите в Telegram</h3>
+            <p>Укажите выбранные товары и город доставки.</p>
+          </div>
+
+          <div class="order-step reveal">
+            <span class="order-number">3</span>
+            <h3>Получите подтверждение</h3>
+            <p>Мы уточним наличие, итоговую стоимость, срок выполнения и условия доставки.</p>
+          </div>
+
+          <div class="order-step reveal">
+            <span class="order-number">4</span>
+            <h3>Согласуйте оплату</h3>
+            <p>После согласования деталей Вы сможете внести оплату.</p>
+          </div>
+
+          <div class="order-step reveal">
+            <span class="order-number">5</span>
+            <h3>Получите трек-номер</h3>
+            <p>После отправки заказа мы сообщим номер для отслеживания посылки.</p>
+          </div>
+        </div>
+
+        <div class="order-bottom reveal">
+          <p>
+            Заказы оформляются на условиях 100% предоплаты.
+            Предельный срок выполнения заказа — 1 календарный месяц.
+          </p>
+          <a class="btn dark" href="https://t.me/Pavel_Elizarev" target="_blank" rel="noopener noreferrer">
+            Уточнить наличие и оформить заказ
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section class="brand" id="brand">
       <div class="container brand-grid">
         <div class="reveal">
           <div class="eyebrow">О бренде</div>
           <h2>«Еда Сибири» — природные продукты для красоты и заботы о себе</h2>
           <p>
-            Компания создаёт продукцию, вдохновлённую богатствами Сибири и Урала.
-            В основе подхода — сочетание традиционных знаний, современных разработок
-            и внимательного отношения к качеству компонентов.
+            «Еда Сибири» — комплекс биопродукции из растительного сырья Сибири.
+            Вызревшие дикоросы собираются вручную, чтобы сохранить ценные вещества
+            и питательные элементы. Они мягко воздействуют на организм и помогают
+            поддерживать силы и энергию.
           </p>
 
           <a
@@ -1062,6 +1237,7 @@
             </button>
 
             <p class="review-author">Мария Франева</p>
+            <p class="review-context">Отзыв о продукции бренда «Еда Сибири»</p>
 
             <a
               class="review-link"
@@ -1089,22 +1265,8 @@
             </button>
 
             <p class="review-author">Екатерина Демидович</p>
+            <p class="review-context">Отзыв о продукции бренда «Еда Сибири»</p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="docs">
-      <div class="container">
-        <div class="intro reveal">
-          <h2>Качество, которому можно доверять</h2>
-          
-        </div>
-
-        <div class="place-grid">
-          <div class="placeholder reveal">Место для документа №1</div>
-          <div class="placeholder reveal">Место для документа №2</div>
-          <div class="placeholder reveal">Место для документа №3</div>
         </div>
       </div>
     </section>
@@ -1112,15 +1274,18 @@
     <section class="legal-info" id="legal">
       <div class="container">
         <div class="intro reveal">
-          <h2>Контакты и информация о продукции</h2>
-          <p>Свяжитесь с нами, если у Вас появились вопросы по заказу, продукции или качеству товаров.</p>
+          <h2>Заказ, доставка и контакты</h2>
+          <p>Здесь собрана основная информация: кто принимает заказы, кто изготавливает продукцию и как выполняется доставка.</p>
         </div>
 
         <div class="legal-grid">
           <div class="legal-card reveal">
-            <h3>Обращения и претензии</h3>
+            <h3>Кто принимает заказы</h3>
             <p>
-              «Еда Сибири»<br>
+              Заказы на продукцию линии «Тайга» принимает представитель бренда
+              «Еда Сибири» Павел Елизарьев.
+            </p>
+            <p>
               Телефон: <a href="tel:+79507215911">+7 (950) 721-59-11</a><br>
               Электронная почта: <a href="mailto:pawel71@mail.ru">pawel71@mail.ru</a>
             </p>
@@ -1151,8 +1316,39 @@
 
         <p class="catalog-note reveal">
           Сайт носит информационный характер и является каталогом продукции.
-          Актуальную стоимость и наличие товаров уточняйте при оформлении заказа.
+          Заказы принимаются по предварительной заявке.
         </p>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="intro reveal">
+          <h2>Частые вопросы</h2>
+          <p>Коротко отвечаем на основные вопросы перед оформлением заказа.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item reveal">
+            <summary>Как оформить заказ?</summary>
+            <p>Выберите подходящие средства и напишите нам в Telegram. Мы уточним наличие, стоимость, срок выполнения и условия доставки.</p>
+          </details>
+
+          <details class="faq-item reveal">
+            <summary>Сколько занимает выполнение заказа?</summary>
+            <p>Предельный срок выполнения заказа — 1 календарный месяц. Фактический срок уточняется при оформлении.</p>
+          </details>
+
+          <details class="faq-item reveal">
+            <summary>Как рассчитывается доставка?</summary>
+            <p>Доставка осуществляется Почтой России или другими транспортными компаниями. Стоимость и подходящий способ доставки согласовываются индивидуально.</p>
+          </details>
+
+          <details class="faq-item reveal">
+            <summary>Можно ли получить помощь при выборе средств?</summary>
+            <p>Да. Напишите нам в Telegram, и мы поможем подобрать подходящие средства линии «Тайга».</p>
+          </details>
+        </div>
       </div>
     </section>
 
@@ -1160,8 +1356,8 @@
       <div class="container reveal">
         <h2>Подберите средства линии «Тайга» для ежедневного ухода</h2>
         <p>
-          Напишите в Telegram, чтобы уточнить стоимость продукции,
-          задать вопросы и оформить заказ.
+          Напишите нам в Telegram, какие товары Вас заинтересовали.
+          Мы ответим на вопросы, уточним наличие, стоимость и условия доставки.
         </p>
 
         <a
@@ -1170,7 +1366,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          Заказать в Telegram
+          Получить консультацию и оформить заказ
         </a>
       </div>
     </section>
@@ -1178,7 +1374,10 @@
 
   <footer>
     <div class="container foot">
-      <div class="foot-brand">🌲 Еда Сибири · косметическая линия «Тайга»</div>
+      <div class="foot-brand">
+        🌲 Еда Сибири · косметическая линия «Тайга»
+        <div class="foot-note">Заказы принимаются по предварительной заявке.</div>
+      </div>
 
       <div class="foot-right">
         <div class="social-links" aria-label="Официальные площадки бренда">
@@ -1440,7 +1639,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            Заказать в Telegram
+            Уточнить наличие и оформить заказ
           </a>
         </div>
       </div>
